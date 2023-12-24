@@ -64,7 +64,7 @@ RUN bash $INST_SCRIPTS/postgresql/install_postgresql.sh  && rm -rf $INST_SCRIPTS
 ARG CUST_USER="oji"
 #should be overwritten on build
 ARG CUST_USER_PW="password"
-RUN useradd -p $(openssl passwd -1 "$CUST_USER_PW") "$CUST_USER" && usermod -aG sudo ${CUST_USER}
+RUN useradd -m -p $(openssl passwd -1 "$CUST_USER_PW") "$CUST_USER" && usermod -aG sudo ${CUST_USER}
 
 ######### End Customizations ###########
 
