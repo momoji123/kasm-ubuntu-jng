@@ -5,7 +5,7 @@ Kasm Ubuntu for Java & Node development in kasm envirnment
 Contents:
 - Ubuntu 22.04 Kasm-version
 - Java 17
-- Node 20.10
+- Node 20.x
 - Postgresql 13
 - Github Desktop
 
