@@ -7,7 +7,7 @@ Contents:
 - Java 17
 - Node 20.x
 - Postgresql 13
-- Github Desktop
+- Eclipse
 
 
 # Run as non root with persistent environment

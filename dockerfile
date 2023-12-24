@@ -33,6 +33,10 @@ RUN bash $INST_SCRIPTS/brave/install_brave.sh  && rm -rf $INST_SCRIPTS/brave/
 COPY ./src/ubuntu/install/vs_code $INST_SCRIPTS/vs_code/
 RUN bash $INST_SCRIPTS/vs_code/install_vs_code.sh  && rm -rf $INST_SCRIPTS/vs_code/
 
+### Install Eclipse
+COPY ./src/ubuntu/install/eclipse $INST_SCRIPTS/eclipse/
+RUN bash $INST_SCRIPTS/eclipse/install_postgresql.sh  && rm -rf $INST_SCRIPTS/eclipse/
+
 ### Install Only Office
 COPY ./src/ubuntu/install/only_office $INST_SCRIPTS/only_office/
 RUN bash $INST_SCRIPTS/only_office/install_only_office.sh  && rm -rf $INST_SCRIPTS/only_office/

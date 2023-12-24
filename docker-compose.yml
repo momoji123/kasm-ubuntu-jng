@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  build-img:
+    build:
+        context: .
+        dockerfile: dockerfile
+        image: registry.mokican.com/kasm-ubuntu-jng:dev-V0.1
+        args:
+            CUST_USER: <username>
+            CUST_USER_PW: <cust_user_password>
