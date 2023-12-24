@@ -60,6 +60,12 @@ RUN bash $INST_SCRIPTS/systemd/install_systemd.sh  && rm -rf $INST_SCRIPTS/syste
 COPY ./src/ubuntu/install/postgresql $INST_SCRIPTS/postgresql/
 RUN bash $INST_SCRIPTS/postgresql/install_postgresql.sh  && rm -rf $INST_SCRIPTS/postgresql/
 
+### add custom user
+ARG CUST_USER="oji"
+#should be overwritten on build
+ARG CUST_USER_PW="password"
+RUN useradd -p $(openssl passwd -1 "$CUST_USER_PW") "$CUST_USER" && usermod -aG sudo ${CUST_USER}
+
 ######### End Customizations ###########
 
 RUN chown 1000:0 $HOME
