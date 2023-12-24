@@ -52,6 +52,10 @@ RUN bash $INST_SCRIPTS/postgresql/install_postgresql.sh  && rm -rf $INST_SCRIPTS
 COPY ./src/ubuntu/install/github-desktop $INST_SCRIPTS/github-desktop/
 RUN bash $INST_SCRIPTS/github-desktop/install_github_desktop.sh  && rm -rf $INST_SCRIPTS/github-desktop
 
+### Install Systemd adapter
+COPY ./src/ubuntu/install/systemd $INST_SCRIPTS/systemd/
+RUN bash $INST_SCRIPTS/systemd/install_systemd.sh  && rm -rf $INST_SCRIPTS/systemd
+
 ######### End Customizations ###########
 
 RUN chown 1000:0 $HOME
