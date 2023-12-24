@@ -26,7 +26,7 @@ RUN bash $INST_SCRIPTS/firefox/install_firefox.sh && rm -rf $INST_SCRIPTS/firefo
 
 ### Install Brave
 COPY ./src/ubuntu/install/brave $INST_SCRIPTS/brave/
-RUN rm -f /etc/opt/chrome/policies/
+RUN rm -rf /etc/opt/chrome/policies/
 RUN bash $INST_SCRIPTS/brave/install_brave.sh  && rm -rf $INST_SCRIPTS/brave/
 
 ### Install Visual Studio Code
