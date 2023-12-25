@@ -59,9 +59,6 @@ RUN bash $INST_SCRIPTS/postgresql/install_postgresql.sh  && rm -rf $INST_SCRIPTS
 ### copy service starters scripts
 COPY ./src/ubuntu/services $HOME/services/
 
-### enable postgresql
-RUN bash $HOME/services/postgresql/start-postgresql.sh 
-
 ### Add kasm-user to sudo
 RUN echo 'kasm-user ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 

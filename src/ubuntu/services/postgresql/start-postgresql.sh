@@ -3,5 +3,3 @@ set -ex
 
 sudo systemctl start postgresql
 sudo systemctl start postgresql@13-main.service
-sudo systemctl enable postgresql
-sudo systemctl enable postgresql@13-main.service
