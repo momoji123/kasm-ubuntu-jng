@@ -5,7 +5,4 @@ services:
     build:
         context: .
         dockerfile: dockerfile
-        args:
-            CUST_USER: <username>
-            CUST_USER_PW: <cust_user_password>
     image: registry.mokican.com/kasm-ubuntu-jng:dev-V0.1
