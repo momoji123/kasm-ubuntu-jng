@@ -44,12 +44,8 @@ RUN apt-get update && apt install -y openjdk-17-jdk openjdk-17-jre
 COPY ./src/ubuntu/install/nodeJS $INST_SCRIPTS/nodeJS/
 RUN bash $INST_SCRIPTS/nodeJS/install_nodeJS.sh  && rm -rf $INST_SCRIPTS/nodeJS/
 
-### Install Github Desktop
-COPY ./src/ubuntu/install/github-desktop $INST_SCRIPTS/github-desktop/
-RUN bash $INST_SCRIPTS/github-desktop/install_github_desktop.sh  && rm -rf $INST_SCRIPTS/github-desktop
-
 ### Add kasm-user to sudo
-RUN echo 'kasm-user ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+#RUN echo 'kasm-user ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 ######### End Customizations ###########
 
