@@ -57,7 +57,7 @@ COPY ./src/ubuntu/install/postgresql $INST_SCRIPTS/postgresql/
 RUN bash $INST_SCRIPTS/postgresql/install_postgresql.sh  && rm -rf $INST_SCRIPTS/postgresql/
 
 ### Add kasm-user to sudo
-RUN echo \"kasm-user  ALL=(ALL) NOPASSWD: ALL\" >> /etc/sudoers'"
+RUN echo 'kasm-user ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 ######### End Customizations ###########
 
