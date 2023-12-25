@@ -48,17 +48,6 @@ RUN bash $INST_SCRIPTS/nodeJS/install_nodeJS.sh  && rm -rf $INST_SCRIPTS/nodeJS/
 COPY ./src/ubuntu/install/github-desktop $INST_SCRIPTS/github-desktop/
 RUN bash $INST_SCRIPTS/github-desktop/install_github_desktop.sh  && rm -rf $INST_SCRIPTS/github-desktop
 
-### Install Systemd adapter
-COPY ./src/ubuntu/install/systemd $INST_SCRIPTS/systemd/
-RUN bash $INST_SCRIPTS/systemd/install_systemd.sh  && rm -rf $INST_SCRIPTS/systemd
-
-### Install Postgresql
-COPY ./src/ubuntu/install/postgresql $INST_SCRIPTS/postgresql/
-RUN bash $INST_SCRIPTS/postgresql/install_postgresql.sh  && rm -rf $INST_SCRIPTS/postgresql/
-
-### copy service starters scripts
-COPY ./src/ubuntu/services $HOME/services/
-
 ### Add kasm-user to sudo
 RUN echo 'kasm-user ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
