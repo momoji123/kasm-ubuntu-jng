@@ -1,27 +1,47 @@
 # kasm-ubuntu-jng
 
-Kasm Ubuntu for Java & Node development in kasm envirnment
+Kasm Ubuntu-focal for Java & Node development in kasm envirnment
 
-Contents:
-- Ubuntu 22.04 Kasm-version
+## Contents
+### basics
+- Ubuntu 20.04 Kasm-version
 - Java 17
 - Node 20.x
 - Postgresql 13
-- Eclipse
+- VS Code
+
+### Browsers
+- Chrome
+- Firefox
+- Brave
 
 
-# Run as non root with persistent environment
 
-TODO BEFORE initial run:
-- edit kasm config to run as root
-- run workspace in persistent mode
+# Run with persistent environment
 
-TODO ON initial run:
-- create your own user: adduser <username>
-- add to sudo group: usermod -aG sudo <username>
-- end session
+1. Setup volume mapping:
 
-TODO AFTER initial run:
-- edit kasm config to run as custom user which created on prev step
+{
+  "/mnt/kasm_profiles/kasm-ubuntu-jng/etc/{username}/postgresql": {
+    "bind": "/etc/postgresql",
+    "mode": "rw",
+    "uid": 117,
+    "gid": 127,
+    "required": true,
+    "skip_check": false
+  },
+  "/mnt/kasm_profiles/kasm-ubuntu-jng/var/{username}/postgresql": {
+    "bind": "/var/lib/postgresql",
+    "mode": "rw",
+    "uid": 117,
+    "gid": 127,
+    "required": true,
+    "skip_check": false
+  }
+}
+
+2. Setup Persistent Profile Path
+
+/mnt/kasm_profiles/kasm-ubuntu-jng/{username}	
 
 Have fun!
