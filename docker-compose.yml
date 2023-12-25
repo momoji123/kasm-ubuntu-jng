@@ -5,4 +5,4 @@ services:
     build:
         context: .
         dockerfile: dockerfile
-    image: registry.mokican.com/kasm-ubuntu-jng:dev-V0.1
+    image: registry.mokican.com/kasm-ubuntu-jng:1.0-focal
