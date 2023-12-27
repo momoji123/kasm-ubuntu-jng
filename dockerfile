@@ -48,6 +48,12 @@ RUN bash $INST_SCRIPTS/nodeJS/install_nodeJS.sh  && rm -rf $INST_SCRIPTS/nodeJS/
 COPY ./src/ubuntu/install/veracrypt $INST_SCRIPTS/veracrypt/
 RUN bash $INST_SCRIPTS/veracrypt/install_veracrypt.sh  && rm -rf $INST_SCRIPTS/veracrypt/
 
+### keep os update
+#LAST_UPDATE variable must be filled in docker-compose file
+ARG LAST_UPDATE
+RUN echo "Last update: ${LAST_UPDATE}" && sudo apt update && sudo apt upgrade -y
+
+
 ### Add kasm-user to sudo
 #RUN echo 'kasm-user ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
