@@ -44,6 +44,10 @@ RUN apt-get update && apt install -y openjdk-17-jdk openjdk-17-jre
 COPY ./src/ubuntu/install/nodeJS $INST_SCRIPTS/nodeJS/
 RUN bash $INST_SCRIPTS/nodeJS/install_nodeJS.sh  && rm -rf $INST_SCRIPTS/nodeJS/
 
+### Install Veracrypt
+COPY ./src/ubuntu/install/veracrypt $INST_SCRIPTS/veracrypt/
+RUN bash $INST_SCRIPTS/veracrypt/install_veracrypt.sh  && rm -rf $INST_SCRIPTS/veracrypt/
+
 ### Add kasm-user to sudo
 #RUN echo 'kasm-user ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
