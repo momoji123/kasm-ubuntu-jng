@@ -57,9 +57,19 @@ RUN bash $INST_SCRIPTS/zip/install_zip.sh  && rm -rf $INST_SCRIPTS/zip/
 ARG LAST_UPDATE
 RUN echo "Last update: ${LAST_UPDATE}" && sudo apt update && sudo apt upgrade -y
 
+### Install Systemd adapter
+COPY ./src/ubuntu/install/systemd $INST_SCRIPTS/systemd/
+RUN bash $INST_SCRIPTS/systemd/install_systemd.sh  && rm -rf $INST_SCRIPTS/systemd
+
+### Install Postgresql
+COPY ./src/ubuntu/install/postgresql $INST_SCRIPTS/postgresql/
+RUN bash $INST_SCRIPTS/postgresql/install_postgresql.sh  && rm -rf $INST_SCRIPTS/postgresql/
+
+### copy service starters scripts
+COPY ./src/ubuntu/services $HOME/services/
 
 ### Add kasm-user to sudo
-#RUN echo 'kasm-user ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+RUN echo 'kasm-user ALL=(ALL) !ALL' >> /etc/sudoers && echo 'kasm-user ALL=(root) NOPASSWD: /bin/systemctl' >> /etc/sudoers
 
 ######### End Customizations ###########
 
