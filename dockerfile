@@ -48,6 +48,10 @@ RUN bash $INST_SCRIPTS/nodeJS/install_nodeJS.sh  && rm -rf $INST_SCRIPTS/nodeJS/
 COPY ./src/ubuntu/install/veracrypt $INST_SCRIPTS/veracrypt/
 RUN bash $INST_SCRIPTS/veracrypt/install_veracrypt.sh  && rm -rf $INST_SCRIPTS/veracrypt/
 
+### Install Zip
+COPY ./src/ubuntu/install/zip $INST_SCRIPTS/zip/
+RUN bash $INST_SCRIPTS/zip/install_zip.sh  && rm -rf $INST_SCRIPTS/zip/
+
 ### keep os update
 #LAST_UPDATE variable must be filled in docker-compose file
 ARG LAST_UPDATE
