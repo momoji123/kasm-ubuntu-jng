@@ -9,7 +9,8 @@ WORKDIR $HOME
 ######### Customize Container Here ###########
 
 ### install sude
-RUN apt-get update && apt-get -y upgrade && apt-get install -y sudo
+ARG LAST_MAJOR_UPDATE
+RUN echo "Last update: ${LAST_MAJOR_UPDATE}" &&  apt-get update && apt-get -y upgrade && apt-get install -y sudo
 
 ### Install Tools
 COPY ./src/ubuntu/install/tools $INST_SCRIPTS/tools/
