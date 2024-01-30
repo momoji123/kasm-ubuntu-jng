@@ -1,4 +1,4 @@
-FROM kasmweb/core-ubuntu-jammy:1.14.0
+FROM kasmweb/core-ubuntu-jammy:x86_64-1.14.0-rolling
 USER root
 
 ENV HOME /home/kasm-default-profile
