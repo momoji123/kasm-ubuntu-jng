@@ -45,9 +45,9 @@ RUN apt-get update && apt install -y openjdk-17-jdk openjdk-17-jre
 COPY ./src/ubuntu/install/nodeJS $INST_SCRIPTS/nodeJS/
 RUN bash $INST_SCRIPTS/nodeJS/install_nodeJS.sh  && rm -rf $INST_SCRIPTS/nodeJS/
 
-### Install Veracrypt
-COPY ./src/ubuntu/install/veracrypt $INST_SCRIPTS/veracrypt/
-RUN bash $INST_SCRIPTS/veracrypt/install_veracrypt.sh  && rm -rf $INST_SCRIPTS/veracrypt/
+### Install Putty
+COPY ./src/ubuntu/install/putty $INST_SCRIPTS/putty/
+RUN bash $INST_SCRIPTS/putty/install_putty.sh  && rm -rf $INST_SCRIPTS/putty/
 
 ### Install Zip
 COPY ./src/ubuntu/install/zip $INST_SCRIPTS/zip/
