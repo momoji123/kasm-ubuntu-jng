@@ -2,6 +2,12 @@
 
 set -e
 
+# Just remove xdg-open for Jammy and Noble
+if [[ "$(lsb_release -cs)" == @(jammy|noble) ]]; then
+  rm -f /usr/bin/xdg-open
+  exit 0
+fi
+
 libgtk_deb=libgtk.deb
 ARCH=$(arch | sed 's/aarch64/arm64/g' | sed 's/x86_64/amd64/g')
 
