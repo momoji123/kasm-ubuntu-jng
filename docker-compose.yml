@@ -6,6 +6,6 @@ services:
         context: .
         dockerfile: dockerfile
         args:
-            LAST_UPDATE: "14.12.2024 12:45"
-            LAST_MAJOR_UPDATE: "14.12.2024 12:45"
+            LAST_UPDATE: "02.02.2025 14:45"
+            LAST_MAJOR_UPDATE: "02.02.2025 14:45"
     image: registry.mokican.com/kasm-ubuntu-jng:1.16-jammy
